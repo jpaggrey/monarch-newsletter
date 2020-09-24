@@ -1,0 +1,57 @@
+{
+  "name": "monarch-newsletter",
+  "version": "1.0.0",
+  "description": "My Moleculer-based microservices project",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc && moleculer-runner --repl lib/services/*.service.js",
+    "start": "moleculer-runner",
+    "cli": "moleculer connect NATS",
+    "ci": "jest --watch",
+    "test": "jest --coverage",
+    "dc:up": "docker-compose up --build -d",
+    "dc:logs": "docker-compose logs -f",
+    "dc:down": "docker-compose down"
+  },
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "author": "jaggrey",
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "jest-cli": "^25.1.0",
+    "moleculer-repl": "^0.6.2",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.3",
+    "typescript": "^3.9.7",
+    "typescript-tslint-plugin": "^0.5.5"
+  },
+  "dependencies": {
+    "@types/mongoose": "^5.7.36",
+    "aws-sdk": "^2.756.0",
+    "dotenv": "^8.2.0",
+    "helmet": "^4.1.0",
+    "ip-cidr": "^2.1.0",
+    "moleculer": "^0.14.0",
+    "moleculer-cron": "0.0.2",
+    "moleculer-db": "^0.8.4",
+    "moleculer-db-adapter-mongo": "^0.4.7",
+    "moleculer-db-adapter-mongoose": "^0.8.7",
+    "moleculer-web": "^0.9.0",
+    "mongoose": "^5.10.0",
+    "nats": "^1.3.2",
+    "uuidv4": "^6.2.3"
+  },
+  "engines": {
+    "node": ">= 10.x.x"
+  },
+  "jest": {
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "rootDir": "./services",
+    "roots": [
+      "../test"
+    ]
+  }
+}
